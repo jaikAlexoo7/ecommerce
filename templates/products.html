@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+<div>
+    <img src="{{category.image.url}}" height="450px" width="70%">
+</div></center>
+<div class="container-fluid mt-5" style="">
+    <h3 class="text-center mb-2 text-uppercase">{{category.cname}}</h3>
+    <p style="text-align:justify;line-height:2;">{{category.description}}</p>
+</div>
+<div class="container-fluid mt-4" style="margin-bottom:100px;">
+    <div class="row">
+        {% for i in p %}
+        <div class="col-sm-6">
+        <div class="card" style="width: 26rem;">
+  <img src="{{i.image.url}}" class="card-img-top" height="250px" width="100%" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{i.pname}}</h5>
+<!--    <p class="card-text">{{i.description}}</p>-->
+      <p class="card-text text-center">{{i.price}}</p>
+    <a href="{% url 'shop:detail' i.pname %}" style="position:relative;left:40%;" class="btn btn-primary">DETAILS</a>
+  </div>
+        </div></div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

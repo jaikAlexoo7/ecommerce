@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div>
+    <img src="{% static 'images/banner1.avif' %}" height="450px" width="100%">
+</div>
+<div class="container-fluid mt-4" style="margin-bottom:100px;">
+    <h3 class="text-center mb-2">Our Collections</h3>
+    <p style="text-align:justify;line-height:2;">An ecommerce business is a company that generates revenue from selling products or services online. For example, an ecommerce company might sell software, apparel, housewares, or web design services. You can run an ecommerce business from a single website or through multiple online channels like social media and email.</p>
+</div>
+
+<div class="container-fluid mt-4" style="margin-bottom:100px;">
+    <div class="row">
+        {% for i in c %}
+        <div class="col-sm-4">
+        <div class="card" style="width: 26rem;">
+  <img src="{{i.image.url}}" class="card-img-top" height="250px" width="100%" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{i.cname}}</h5>
+    <p class="card-text">{{i.description}}</p>
+    <a href="{% url 'shop:allproducts' i.cname %}" style="position:relative;left:29%;" class="btn btn-primary">SEE PRODUCTS</a>
+  </div>
+        </div></div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

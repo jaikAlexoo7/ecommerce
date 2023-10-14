@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    {% for i in orders %}
+        <div class="container">
+            <h3 class="text-change text-sucess">Name of the the Customer :{{i.user}}</h3>
+        <img src="{{i.product.image.url}}" height="200px" width="200px">
+        <h6 class="text-center text-danger">PRODUCT NAME : {{i.product}}</h6>
+        <h6 class="text-center text-danger">QUANTITY : {{i.noofitems}}</h6>
+        <h6 class="text-center text-danger">ADRESS : {{i.address}}</h6>
+        <h6 class="text-center text-danger">PHONE NUMBER : {{i.phone }}</h6>
+        <h6 class="text-center text-danger">{{i.order}}</h6>
+        <h6 class="text-center text-danger">ORDER STATUS : {{i.order_status}}</h6>
+        <h6 class="text-center text-danger">DELIVERY STATUS : {{i.delivery_status}}</h6>
+        <h6 class="text-center text-danger">{{i.date_added}}</h6>
+
+    </div>
+{% endfor %}
+<p class="text-center"><a href="{% url 'shop:allprodcat' %}">continue Shopping</a></p>
+{% endblock %}

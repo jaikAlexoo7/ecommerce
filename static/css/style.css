@@ -1,0 +1,26 @@
+body {
+  background-color: coral;
+  font-family: 'Roboto Slab', serif;
+  color: white;
+}
+.navbar-light .navbar-nav .nav-link,.navbar-light .navbar-brand,.nav-link
+{
+ color: #1202AC;
+ font-size:18px;
+ font-weight:bold;
+}
+
+ .footer
+ {
+ height:45px;
+ width:100%;
+ background-color:grey;
+ position:fixed;
+ left:0;
+ bottom:0;
+ font-weight:bold;
+ text-align:center
+ }
+
+ img
+ {border-radius: 10px;}
